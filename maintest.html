@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>심짱 심리테스트</title>
+        <p><center>이 테스트는 실제 MBTI 이론을 통해 만들어졌습니다.</center></p></br>
+        
+        <p><center>
+        <span class="question1"></span>
+        </center></p>
+        
+        <style type="text/css">
+        body {
+          background-image: url('https://simzzang.neocities.org/simzzang_backgroundimg.png');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+        div {
+          text-align: center;
+        }
+        </style>
+        <div>
+          <img onclick=start()
+          id="qstart"
+          src="simzzang_answerimg.png" alt="시작">
+          </br>
+        
+          <img onclick=nextq1()
+          id="a11"
+          src='https://simzzang.neocities.org/simzzang_%EC%8B%A0%EB%85%90%EC%97%90%20%EB%94%B0%EB%A5%B8%20%EC%82%B6.png' alt="1번">
+          </br>
+
+          <img onclick=nextq2()
+          id="a12"
+          src='https://simzzang.neocities.org/simzzang_%EC%83%88%EB%A1%9C%EC%9A%B4%20%EC%82%B6.png' alt="2번">
+          </br>
+
+          <img onclick=nextq3()
+          id="a13"
+          src='https://simzzang.neocities.org/simzzang_%EC%95%88%EC%A0%95%EC%A0%81%EC%9D%B8%20%EC%82%B6.png' alt="3번">
+          </br>
+
+          <img onclick=nextq4()
+          id="a14"
+          src='https://simzzang.neocities.org/simzzang_%EB%B3%B8%EB%8A%A5%EC%97%90%20%EB%94%B0%EB%A5%B8%20%EC%82%B6.png' alt="4번">
+        </br>
+
+        </div>
+    </head>
+    <body><script language="javascript">
+        //alert("심리테스트 사이트 공사중...나중에 다시 찾아와 주세요")
+        a11.style.visibility='hidden'
+        a12.style.visibility='hidden'
+        a13.style.visibility='hidden'
+        a14.style.visibility='hidden'
+        let E=0
+        let I=0
+        let N=0
+        let S=0
+        let F=0
+        let T=0
+        let P=0
+        let J=0
+        let Qn=0
+        let mbti=""
+        document.getElementById("a11").addEventListener("click","a11")
+        document.getElementById("a12").addEventListener("click","a12")
+        document.getElementById("a13").addEventListener("click","a13")
+        document.getElementById("a14").addEventListener("click","a14")
+        document.getElementById("qstart").addEventListener("click","qstart")
+        function start(){
+          qstart.style.visibility='hidden'
+          a11.style.visibility='visible'
+          a12.style.visibility='visible'
+          a13.style.visibility='visible'
+          a14.style.visibility='visible'
+          let x = document.getElementsByClassName("question1")[0]
+          x.innerText="다음 중 어떤 인생을 살고 싶나요?"
+          Qn+=1
+        }
+        
+        //1번째답
+        function nextq1(){
+          if(Qn==1){
+            N+=1
+            J+=1
+          }
+          else if(Qn==2){
+            N+=1
+            F+=1
+          }
+          else if(Qn==3){
+            E+=1
+            N+=1
+          }
+          else if(Qn==4){
+            E+=1
+            F+=1
+          }
+          else if(Qn==5){
+            F+=1
+            J+=1
+          }
+          else if(Qn==6){
+            E+=1
+            J+=1
+          }
+          nextq()
+          return
+        }
+        //2번째답
+        function nextq2(){
+          if(Qn==1){
+            N+=1
+            P+=1
+          }
+          else if(Qn==2){
+            N+=1
+            T+=1
+          }
+          else if(Qn==3){
+            E+=1
+            S+=1
+          }
+          else if(Qn==4){
+            I+=1
+            F+=1
+          }
+          else if(Qn==5){
+            F+=1
+            P+=1
+          }
+          else if(Qn==6){
+            E+=1
+            P+=1
+          }
+          nextq()
+          return
+        }
+        //3번째답
+        function nextq3(){
+          if(Qn==1){
+            S+=1
+            J+=1
+          }
+          else if(Qn==2){
+            S+=1
+            F+=1
+          }
+          else if(Qn==3){
+            I+=1
+            N+=1
+          }
+          else if(Qn==4){
+            E+=1
+            T+=1
+          }
+          else if(Qn==5){
+            T+=1
+            J+=1
+          }
+          else if(Qn==6){
+            I+=1
+            J+=1
+          }
+          nextq()
+          return
+        }
+        //4번째답
+        function nextq4(){
+          if(Qn==1){
+            S+=1
+            P+=1
+          }
+          else if(Qn==2){
+            S+=1
+            T+=1
+          }
+          else if(Qn==3){
+            I+=1
+            S+=1
+          }
+          else if(Qn==4){
+            I+=1
+            T+=1
+          }
+          else if(Qn==5){
+            T+=1
+            P+=1
+          }
+          else if(Qn==6){
+            I+=1
+            P+=1
+          }
+          nextq()
+          return
+        }
+        //질문,답변 새로고침
+        
+        function nextq(){
+          if(Qn==0){
+            let x = document.getElementsByClassName("question1")[0]
+            x.innerText="다음 중 어떤 인생을 살고 싶나요?";
+            Qn+=1
+          }
+          else if(Qn==1){
+            let x = document.getElementsByClassName("question1")[0]
+            x.innerText="다음 중 어떤 인생을 살고 싶나요?";
+            document.getElementById("a11").src = "https://simzzang.neocities.org/simzzang_%EB%82%AD%EB%A7%8C%EC%A0%81%EC%9D%B8%20%EC%82%B6.png"
+            document.getElementById("a12").src = "https://simzzang.neocities.org/simzzang_%ED%83%90%EA%B5%AC%EC%A0%81%EC%9D%B8%20%EC%82%B6.png"
+            document.getElementById("a13").src = "https://simzzang.neocities.org/simzzang_%EA%B0%80%EC%A0%95%EC%A0%81%EC%9D%B8%20%EC%82%B6.png"
+            document.getElementById("a14").src = "https://simzzang.neocities.org/simzzang_%EC%95%88%EC%A0%95%EC%A0%81%EC%9D%B8%20%EC%82%B6.png"
+            Qn+=1
+          }
+          else if(Qn==2){
+            let x = document.getElementsByClassName("question1")[0]
+            x.innerText="다음 중 어떤 인생을 살고 싶나요?";
+            document.getElementById("a11").src = "https://simzzang.neocities.org/simzzang_%EA%B0%9C%EB%B0%A9%EC%A0%81%EC%9D%B8%20%EC%82%B6.png"
+            document.getElementById("a12").src = "https://simzzang.neocities.org/simzzang_%EC%B9%9C%ED%99%94%EC%A0%81%EC%9D%B8%20%EC%82%B6.png"
+            document.getElementById("a13").src = "https://simzzang.neocities.org/simzzang_%EB%B3%B8%EC%A7%88%EC%A0%81%EC%9D%B8%20%EC%82%B6.png"
+            document.getElementById("a14").src = "https://simzzang.neocities.org/simzzang_%EC%B0%A8%EB%B6%84%ED%95%9C%20%EC%82%B6.png"
+            Qn+=1
+          }
+          else if(Qn==3){
+            let x = document.getElementsByClassName("question1")[0]
+            x.innerText="다음 중 어떤 인생을 살고 싶나요?";
+            document.getElementById("a11").src = "https://simzzang.neocities.org/simzzang_%EC%82%AC%EA%B5%90%EC%A0%81%EC%9D%B8%20%EC%82%B6.png"
+            document.getElementById("a12").src = "https://simzzang.neocities.org/simzzang_%EA%B0%80%EC%B9%98%EC%9E%88%EB%8A%94%20%EC%82%B6.png"
+            document.getElementById("a13").src = "https://simzzang.neocities.org/simzzang_%ED%99%9C%EB%8F%99%EC%A0%81%EC%9D%B8%20%EC%82%B6.png"
+            document.getElementById("a14").src = "https://simzzang.neocities.org/simzzang_%ED%95%99%EB%AC%B8%EC%A0%81%EC%9D%B8%20%EC%82%B6.png"
+            Qn+=1
+          }
+          else if(Qn==4){
+            let x = document.getElementsByClassName("question1")[0]
+            x.innerText="다음 중 어떤 인생을 살고 싶나요?";
+            document.getElementById("a11").src = "https://simzzang.neocities.org/simzzang_%EC%A1%B0%ED%99%94%EB%A1%9C%EC%9A%B4%20%EC%82%B6.png"
+            document.getElementById("a12").src = "https://simzzang.neocities.org/simzzang_%ED%98%91%EC%A1%B0%EC%A0%81%EC%9D%B8%20%EC%82%B6.png"
+            document.getElementById("a13").src = "https://simzzang.neocities.org/simzzang_%EB%A7%88%EC%9D%B4%EC%9B%A8%EC%9D%B4%EC%9D%98%20%EC%82%B6.png"
+            document.getElementById("a14").src = "https://simzzang.neocities.org/simzzang_%ED%84%B8%ED%84%B8%ED%95%9C%20%EC%82%B6.png"
+            Qn+=1
+          }
+          else if(Qn==5){
+            let x = document.getElementsByClassName("question1")[0]
+            x.innerText="다음 중 어떤 인생을 살고 싶나요?";
+            document.getElementById("a11").src = "https://simzzang.neocities.org/simzzang_%EB%8B%A4%EB%A5%B8%20%EC%82%AC%EB%9E%8C%EB%93%A4%EC%97%90%EA%B2%8C%20%EC%98%81%ED%96%A5%EC%9D%84%20%EC%A3%BC%EB%8A%94%20%EC%82%B6.png"
+            document.getElementById("a12").src = "https://simzzang.neocities.org/simzzang_%EC%83%88%EB%A1%9C%EC%9A%B4%20%EA%B1%B8%20%ED%83%90%EC%83%89%ED%95%98%EB%8A%94%20%EC%82%B6.png"
+            document.getElementById("a13").src = "https://simzzang.neocities.org/simzzang_%EB%82%98%EB%A7%8C%EC%9D%98%20%EB%B0%A9%EC%9D%B4%20%EC%9E%88%EB%8A%94%20%EC%82%B6.png"
+            document.getElementById("a14").src = "https://simzzang.neocities.org/simzzang_%EC%97%AC%EC%9C%A0%EB%A1%AD%EA%B3%A0%20%EB%8A%90%EA%B8%8B%ED%95%9C%20%EC%82%B6.png"
+            Qn+=1
+          }
+          else if(Qn==6){
+            if(E>I){
+              mbti=mbti+"E"
+            }
+            else{
+              mbti=mbti+"I"
+            }
+            if(N>S){
+              mbti=mbti+"N"
+            }
+            else{
+              mbti=mbti+"S"
+            }
+            if(F>T){
+              mbti=mbti+"F"
+            }
+            else{
+              mbti=mbti+"T"
+            }
+            if(P>J){
+              mbti=mbti+"P"
+            }
+            else{
+              mbti=mbti+"J"
+            }
+            document.write("당신은 "+mbti+" 입니다!")
+            export {mbti}
+          }
+        }
+    </script></body>
+</html>
